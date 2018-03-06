@@ -1,0 +1,32 @@
+
+package sumoffloatnumber;
+import java.util.Scanner;
+
+/**
+ * <p> Title: floatingsum Class. </p>
+ *   @author Shivam Singhal
+ **/
+
+public class floatingsum {
+
+	public static void main(String[] args) {
+		System.out.println("@author Shivam Singhal");
+		Scanner S1=new Scanner(System.in);
+		System.out.println("Sum and differnece of the two pairs of double numbers- ");
+		System.out.println("\nEnter Measured value of first number and then enter error term of first number");
+		double IstMeasuredValue=S1.nextDouble();
+		double IstErrorTermValue=S1.nextDouble();
+		System.out.println("So the first number is "+" "+ IstMeasuredValue+" "+"\u00B1"+ " "+ IstErrorTermValue);
+		System.out.println("\nEnter Measured value of Second number and then enter error term of Second number");
+		double IIndMeasuredValue=S1.nextDouble();
+		double IIndErrorTermValue=S1.nextDouble();
+		System.out.println("So the Second number is "+" "+ IIndMeasuredValue+" "+"\u00B1"+ " "+ IIndErrorTermValue);
+		double SumofMeasuredValue=IstMeasuredValue+IIndMeasuredValue;
+		double SumofErrorTermValue=IstErrorTermValue+IIndErrorTermValue;
+		double DifferenceofMeasuredValue= IstMeasuredValue-IIndMeasuredValue;
+		double DifferenceofErrorTermValue = IstErrorTermValue+IIndErrorTermValue;
+		
+		System.out.println("\nSum is "+Math.round(SumofMeasuredValue*100.0)/100.0 +" "+ "\u00B1"+" "+ Math.round(SumofErrorTermValue*100.0)/100.0  );
+		System.out.println("Difference is "+Math.round(DifferenceofMeasuredValue*100.0)/100.0 +" "+ "\u00B1"+" "+ Math.round(DifferenceofErrorTermValue*100.0)/100.0  );
+	}
+}
