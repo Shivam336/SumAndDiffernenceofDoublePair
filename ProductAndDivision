@@ -1,0 +1,32 @@
+package sumoffloatnumber;
+
+import java.util.Scanner;
+/**
+ * <p> Title: floatingsum Class. </p>
+ *   @author Shivam Singhal
+ **/
+
+public class ProductAndDivision {
+	public static void main(String[] args) {
+		System.out.println("@author Shivam Singhal");
+		Scanner S1=new Scanner(System.in);
+		System.out.println("Product and Quotient of the two pairs of double numbers- ");
+		System.out.println("\nEnter Measured value of first number and then enter error term of first number");
+		double IstMeasuredValue=S1.nextDouble();
+		double IstErrorTermValue=S1.nextDouble();
+		System.out.println("So the first number is "+" "+ IstMeasuredValue+" "+"\u00B1"+ " "+ IstErrorTermValue);
+		System.out.println("\nEnter Measured value of Second number and then enter error term of Second number");
+		double IIndMeasuredValue=S1.nextDouble();
+		double IIndErrorTermValue=S1.nextDouble();
+		System.out.println("So the Second number is "+" "+ IIndMeasuredValue+" "+"\u00B1"+ " "+ IIndErrorTermValue);
+		double ProductofMeasuredValue=IstMeasuredValue*IIndMeasuredValue;
+		double Value1ErrorFraction=IstErrorTermValue/IstMeasuredValue;
+		double Value2ErrorFraction=IIndErrorTermValue/IIndMeasuredValue;
+		double ProductofErrorTermValue= (Value1ErrorFraction + Value2ErrorFraction) * ProductofMeasuredValue ;
+		double QuotientofMeasuredValue= IstMeasuredValue/IIndMeasuredValue;
+		double QuotientofErrorTermValue = (Value1ErrorFraction + Value2ErrorFraction) * QuotientofMeasuredValue;
+		
+		System.out.println("\nProduct is "+Math.round(ProductofMeasuredValue*100.0)/100.0 +" "+ "\u00B1"+" "+ Math.round(ProductofErrorTermValue*100.0)/100.0  );
+		System.out.println("Quotient is "+Math.round(QuotientofMeasuredValue*100.0)/100.0 +" "+ "\u00B1"+" "+ Math.round(QuotientofErrorTermValue*100.0)/100.0  );
+	}
+}
