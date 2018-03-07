@@ -1,0 +1,29 @@
+package sumoffloatnumber;
+
+import java.util.Scanner;
+
+/**
+ * <p> Title: floatingsum Class. </p>
+ *   @author Shivam Singhal
+ **/
+
+public class PowerFunction {
+	public static void main(String[] args) {
+		System.out.println("@author Shivam Singhal");
+		Scanner S1=new Scanner(System.in);
+		System.out.println("Powers and root of the double number with error terms- ");
+		System.out.println("\nEnter Measured value of number and then enter error term of number");
+		double IstMeasuredValue=S1.nextDouble();
+		double IstErrorTermValue=S1.nextDouble();
+		System.out.println("So the number is "+" "+ IstMeasuredValue+" "+"\u00B1"+ " "+ IstErrorTermValue);
+		System.out.println("\nEnter the number for Power");
+		double IIndMeasuredValue=S1.nextDouble();
+		System.out.println("So the Power number is "+" "+ IIndMeasuredValue);
+		double Value1ErrorFraction=IstErrorTermValue/IstMeasuredValue;
+		double Power = Math.pow(IstMeasuredValue,IIndMeasuredValue );
+		double PowerErrorTermValue = IIndMeasuredValue * Value1ErrorFraction * Power; 
+		
+		System.out.println("\nPower  is "+Math.round(Power*100.0)/100.0 +" "+ "\u00B1"+" "+ Math.round(PowerErrorTermValue*100.0)/100.0  );
+
+	}
+}
