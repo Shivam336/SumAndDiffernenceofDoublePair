@@ -1,0 +1,26 @@
+package sumoffloatnumber;
+
+import java.util.Scanner;
+
+public class SquareCubeRootSquareRoot {
+
+	public static void main(String[] args) {
+		System.out.println("@author Shivam Singhal");
+		Scanner S1=new Scanner(System.in);
+		System.out.println("\nSquare, Square root and Cube root of the double number with error terms- ");
+		System.out.println("\nEnter Measured value of number and then enter error term of number");
+		double IstMeasuredValue=S1.nextDouble();
+		double IstErrorTermValue=S1.nextDouble();
+		System.out.println("So the number     is "+ IstMeasuredValue+" "+"\u00B1"+ " "+ IstErrorTermValue);
+		double Value1ErrorFraction=IstErrorTermValue/IstMeasuredValue;
+		double Powersq = Math.pow(IstMeasuredValue,2 );
+		double PowerErrorTermValuesq = 2 * Value1ErrorFraction * Powersq; 
+		double Powersqrt = Math.pow(IstMeasuredValue,0.5 );
+		double PowerErrorTermValuesqrt = 0.5 * Value1ErrorFraction * Powersqrt; 
+		double Powercubert = Math.pow(IstMeasuredValue,0.3 );
+		double PowerErrorTermValuecubert = 0.3 * Value1ErrorFraction * Powercubert; 
+		System.out.println("\nIts Square        is "+Math.round(Powersq*100.0)/100.0 +" "+ "\u00B1"+" "+ Math.round(PowerErrorTermValuesq*100.0)/100.0  );
+		System.out.println("\nIts Square root   is "+Math.round(Powersqrt*100.0)/100.0 +" "+ "\u00B1"+" "+ Math.round(PowerErrorTermValuesqrt*100.0)/100.0  );
+		System.out.println("\nIts Cube root     is "+Math.round(Powercubert*100.0)/100.0 +" "+ "\u00B1"+" "+ Math.round(PowerErrorTermValuecubert*100.0)/100.0  );
+	}	
+}
